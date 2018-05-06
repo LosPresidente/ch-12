@@ -14,6 +14,8 @@ namespace SportsStore.Controllers {
             cart = cartService;
         }
 
+
+
         [Authorize]
         public ViewResult List() =>
             View(repository.Orders.Where(o => !o.Shipped));
@@ -29,6 +31,8 @@ namespace SportsStore.Controllers {
             }
             return RedirectToAction(nameof(List));
         }
+
+
 
         public ViewResult Checkout() => View(new Order());
 

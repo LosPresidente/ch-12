@@ -21,6 +21,8 @@ namespace SportsStore.Models {
             }
         }
 
+
+
         public virtual void RemoveLine(Product product) =>
             lineCollection.RemoveAll(l => l.Product.ProductID == product.ProductID);
 
@@ -31,6 +33,8 @@ namespace SportsStore.Models {
 
         public virtual IEnumerable<CartLine> Lines => lineCollection;
     }
+
+
 
     public class CartLine {
         public int CartLineID { get; set; }

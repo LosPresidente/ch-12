@@ -7,6 +7,7 @@ using System;
 namespace SportsStore.Models {
 
     public static class SeedData {
+        
 
         public static void EnsurePopulated(IServiceProvider services) {
             ApplicationDbContext context = services.GetRequiredService<ApplicationDbContext>();
@@ -14,14 +15,18 @@ namespace SportsStore.Models {
             if (!context.Products.Any()) {
                 context.Products.AddRange(
                     new Product {
-                        Name = "Kayak", Description = "A boat for one person",
+                        Name = "Boat", Description = "A boat for one person",
                         Category = "Watersports", Price = 275
                     },
+
+
                     new Product {
-                        Name = "Lifejacket",
+                        Name = "lifejacket",
                         Description = "Protective and fashionable",
                         Category = "Watersports", Price = 48.95m
                     },
+
+
                     new Product {
                         Name = "Soccer Ball",
                         Description = "FIFA-approved size and weight",
@@ -33,12 +38,16 @@ namespace SportsStore.Models {
                         Category = "Soccer", Price = 34.95m
                     },
                     new Product {
-                        Name = "Stadium",
+
+
+                        Name = "Staadium",
                         Description = "Flat-packed 35,000-seat stadium",
                         Category = "Soccer", Price = 79500
                     },
                     new Product {
-                        Name = "Thinking Cap",
+
+
+                        Name = "Thinking caps",
                         Description = "Improve brain efficiency by 75%",
                         Category = "Chess", Price = 16
                     },
@@ -47,16 +56,19 @@ namespace SportsStore.Models {
                         Description = "Secretly give your opponent a disadvantage",
                         Category = "Chess", Price = 29.95m
                     },
+
+
                     new Product {
-                        Name = "Human Chess Board",
+                        Name = "People Chess Board",
                         Description = "A fun game for the family",
                         Category = "Chess", Price = 75
                     },
                     new Product {
-                        Name = "Bling-Bling King",
+                        Name = "Bling-Bling Queen",
                         Description = "Gold-plated, diamond-studded King",
                         Category = "Chess", Price = 1200
                     }
+
                 );
                 context.SaveChanges();
             }

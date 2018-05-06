@@ -42,6 +42,8 @@ namespace SportsStore {
             services.AddSession();
         }
 
+
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env) {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
@@ -50,12 +52,16 @@ namespace SportsStore {
                 app.UseExceptionHandler("/Error");
             }
 
+
+
             app.UseStaticFiles();
             app.UseSession();
             app.UseAuthentication();
             app.UseMvc(routes => {
                 routes.MapRoute(name: "Error", template: "Error",
                     defaults: new { controller = "Error", action = "Error" });
+
+
 
                 routes.MapRoute(
                     name: null,
@@ -71,8 +77,11 @@ namespace SportsStore {
 
                 routes.MapRoute(
                     name: null,
+
                     template: "{category}",
-                    defaults: new { controller = "Product", action = "List", productPage = 1 }
+                    defaults: new { controll
+                    
+                    er = "Product", action = "List", productPage = 1 }
                 );
 
                 routes.MapRoute(
@@ -84,6 +93,8 @@ namespace SportsStore {
             });
             
             //SeedData.EnsurePopulated(app);
+
+
             //IdentitySeedData.EnsurePopulated(app);
         }
     }

@@ -14,8 +14,10 @@ namespace SportsStore.Models {
         [BindNever]
         public bool Shipped { get; set; }
 
+
         [Required(ErrorMessage = "Please enter a name")]
         public string Name { get; set; }
+
 
         [Required(ErrorMessage = "Please enter the first address line")]
         public string Line1 { get; set; }
@@ -27,6 +29,13 @@ namespace SportsStore.Models {
 
         [Required(ErrorMessage = "Please enter a state name")]
         public string State { get; set; }
+
+
+
+
+
+
+
 
         public string Zip { get; set; }
 
